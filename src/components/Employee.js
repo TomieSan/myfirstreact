@@ -1,4 +1,3 @@
-import '../App.css';
 import { useEffect, useState } from "react";
 import employeeService from "../services/employeeService";
 import {Link} from 'react-router-dom';
@@ -65,13 +64,10 @@ const deleteEmployee = (employeeId) => {
                                    <td>{employee.department}</td>
                                    <td>{employee.location}</td>
                                    <td id="tdbut">
-                                       <div className="d-grid gap-2 d-md-flex justify-content-md-center " id="buttonEmp">
-                                       <Link className="btn btn-success" to={`/myreact/edit/${employee.employeeId}`}>Update</Link>
-                                       <button className="btn btn-danger" onClick={(e) => deleteEmployee(employee.employeeId)}>Delete</button>
-
-                                    
-
-                                       </div>
+                                   <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                            <Link className= "btn btn-primary" to={`/edit/${employee.employeeId}`}>Update</Link>
+                                            <button className= "btn btn-danger" onClick={() =>deleteEmployee(employee.employeeId)}>Delete</button>
+                                        </div>
                                    </td>
                                 </tr>
                             )
